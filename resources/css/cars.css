@@ -1,0 +1,77 @@
+@import url('../../node_modules/tom-select/dist/css/tom-select.css');
+
+header {
+    background-color: #435d7d;
+    margin: 0;
+    padding: 10px;
+}
+
+header .header-title {
+    margin: 0;
+    color: white;
+    font-family: Roboto;
+    font-weight: 300;
+    display: inline-block;
+}
+
+header .add-car-button {
+    background-color: green;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-family: Roboto;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 10px;
+    float: right;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+table>thead>tr>th {
+    border-bottom: 2px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    text-align: start;
+    padding: 8px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+table>tbody>tr>td {
+    border-bottom: 1px solid #dee2e6;
+    padding: 3px 8px;
+    font-family: Roboto;
+    font-weight: 300;
+    padding: 15px 8px;
+}
+
+table .id-column {
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.ts-control .item {
+    font-family: Roboto;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.ts-dropdown-content .option {
+    font-family: Roboto;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+#select_section {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px;
+}
+
+#select_section .tom-select {
+    width: 50%;
+}
