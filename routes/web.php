@@ -17,6 +17,10 @@ Route::get('cars', function () {
     return view('cars.index');
 });
 
+Route::get('cars/create', function() {
+    return view('cars.create');
+});
+
 Route::get('manufacturers', function () {
     return view('manufacturers.index');
 });

@@ -49,3 +49,23 @@ table .id-column {
     padding-left: 20px;
     font-weight: 600;
 }
+
+.button {
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-family: Roboto;
+    font-size: 0.9em;
+}
+
+.button.button-blue {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+    font-weight: 500;
+}
+
+.button.button-pale {
+    background-color: white;
+    border: 1px solid #8d949a;
+    color: #7c8a91;
+}
