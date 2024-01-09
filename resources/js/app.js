@@ -1,7 +1,9 @@
 import './bootstrap';
 import TomSelect from '../../node_modules/tom-select/dist/esm/tom-select.complete.js';
 
-new TomSelect('.tom-select', {});
+if(document.getElementsByClassName('tom-select').length > 0) {
+    new TomSelect('.tom-select', {});
+}
 
 // Styling for alternating tables
 for(const tbody of document.querySelectorAll('table.table-alternate-color tbody')) {

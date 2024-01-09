@@ -7,3 +7,45 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
+header {
+    background-color: #435d7d;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+header .header-title {
+    margin: 0;
+    color: white;
+    font-family: Roboto;
+    font-weight: 300;
+    display: inline-block;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+table>thead>tr>th {
+    border-bottom: 2px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    text-align: start;
+    padding: 8px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+table>tbody>tr>td {
+    border-bottom: 1px solid #dee2e6;
+    padding: 3px 8px;
+    font-family: Roboto;
+    font-weight: 300;
+    padding: 15px 8px;
+}
+
+table .id-column {
+    padding-left: 20px;
+    font-weight: 600;
+}

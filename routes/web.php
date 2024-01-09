@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('cars.index');
 });
+
+Route::get('manufacturers', function () {
+    return view('manufacturers.index');
+});
