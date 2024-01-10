@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\ManufacturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('cars', function () {
-    return view('cars.index');
-});
+Route::resource('cars', CarController::class);
 
-Route::get('cars/create', function() {
-    return view('cars.create');
-});
-
-Route::get('manufacturers', function () {
-    return view('manufacturers.index');
-});
+Route::get('manufacturers', [ManufacturerController::class, 'index']);
