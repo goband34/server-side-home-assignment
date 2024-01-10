@@ -17,9 +17,9 @@
         <input type="text" id="manufacturer" value="Toyota Motor Corp" disabled>
         <div></div>
         <div class="form-buttons">
-            <button class="button button-blue">Edit</button>
-            <button class="button button-red">Delete</button>
-            <button class="button button-pale">Cancel</button>
+            <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="button button-blue">Edit</a>
+            <a href="#" class="button button-red">Delete</a>
+            <a href="{{ route('cars.index') }}" class="button button-pale">Cancel</a>
         </div>
     </form>
 </div>

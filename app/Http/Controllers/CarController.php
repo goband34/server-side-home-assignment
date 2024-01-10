@@ -44,7 +44,7 @@ class CarController extends Controller
     }
 
     public function show(Car $car) {
-        return view('cars.show');
+        return view('cars.show', compact('car'));
     }
 
     public function store(Request $request) {
@@ -59,6 +59,32 @@ class CarController extends Controller
             \DB::beginTransaction();
             
             $car = new Car();
+            $car->model = $request->model;
+            $car->year = $request->year;
+            $car->salesperson_email = $request->salesperson_email;
+            $car->manufacturer_id = $request->manufacturer;
+            $car->save();
+
+            \DB::commit();
+            return redirect()->route('cars.index')->withSuccess('Successfully saved the car');
+        }
+        catch (Throwable $e) {
+            \DB::rollback();
+            return redirect()->back()->withErrors([$e->message]);
+        }
+    }
+
+    public function update(Request $request, Car $car) {
+        $request->validate([
+            'model' => ['required'],
+            'year' => ['required', 'date_format:Y'],
+            'salesperson_email' => ['required', 'email'],
+            'manufacturer' => ['required', 'int']
+        ]);
+
+        try {
+            \DB::beginTransaction();
+            
             $car->model = $request->model;
             $car->year = $request->year;
             $car->salesperson_email = $request->salesperson_email;

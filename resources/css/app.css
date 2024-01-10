@@ -51,7 +51,9 @@ table .id-column {
 }
 
 .button {
+    cursor: pointer;
     border-radius: 4px;
+    text-decoration: none;
     padding: 8px 10px;
     font-family: Roboto;
     font-size: 0.9em;
