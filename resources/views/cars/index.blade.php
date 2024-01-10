@@ -31,7 +31,19 @@
                 <td>2010</td>
                 <td>joe@carozza.com</td>
                 <td>Toyota Motor Corp</td>
-                <td>A B C</td>
+                <td>
+                    <div class="car-list-buttons">
+                        <div class="car-list-button green">
+                            <i data-feather="eye"></i>
+                        </div>
+                        <div class="car-list-button grey">
+                            <i data-feather="edit"></i>
+                        </div>
+                        <div class="car-list-button red" onclick="alert('Are you sure?')">
+                            <i data-feather="x"></i>
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td class="id-column">1</td>
@@ -39,7 +51,19 @@
                 <td>2010</td>
                 <td>joe@carozza.com</td>
                 <td>Toyota Motor Corp</td>
-                <td>A B C</td>
+                <td>
+                    <div class="car-list-buttons">
+                        <div class="car-list-button green">
+                            <i data-feather="eye"></i>
+                        </div>
+                        <div class="car-list-button grey">
+                            <i data-feather="edit"></i>
+                        </div>
+                        <div class="car-list-button red" onclick="alert('Are you sure?')">
+                            <i data-feather="x"></i>
+                        </div>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>

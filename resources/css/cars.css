@@ -70,3 +70,34 @@ form .error-message {
     color: red;
     font-size: 0.89em;
 }
+
+.car-list-buttons {
+    display: grid;
+    grid-template-columns: 30px 30px 30px;
+    grid-template-rows: 30px;
+    grid-column-gap: 10px;
+}
+
+.car-list-button {
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.car-list-button.green {
+    border: 1px solid #007a5c;
+    color: #007a5c;
+}
+
+.car-list-button.grey {
+    border: 1px solid #575757;
+    color: #575757;
+}
+
+.car-list-button.red {
+    border: 1px solid red; 
+    color: red;
+}
+                       
