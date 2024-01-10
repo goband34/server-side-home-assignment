@@ -37,12 +37,12 @@
                 <td>{{ $car->manufacturer()->first()?->name }}</td>
                 <td>
                     <div class="car-list-buttons">
-                        <div class="car-list-button green">
+                        <a href="{{ route('cars.show', ['car' => $car->id]) }}" class="car-list-button green">
                             <i data-feather="eye"></i>
-                        </div>
-                        <div class="car-list-button grey">
+                        </a>
+                        <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="car-list-button grey">
                             <i data-feather="edit"></i>
-                        </div>
+                        </a>
                         <div class="car-list-button red" onclick="alert('Are you sure?')">
                             <i data-feather="x"></i>
                         </div>

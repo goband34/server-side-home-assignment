@@ -10,7 +10,7 @@
     <form action="{{ route('cars.store') }}" method="POST" enctype="multipart/form-data">
     @else
     <form action="{{ route('cars.update', ['car' => $car->id]) }}" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_method" value="POST">
+        <input type="hidden" name="_method" value="PUT">
     @endif
         @csrf
         <label for="model_name">Model</label>
@@ -20,19 +20,19 @@
         <span class="error-message">{{ $message }}</span>
         @enderror
         <label for="year">Year</label>
-        <input type="text" id="year" name="year" value="{{ old('year', $car->year) }}" @error('model') class="input-error" @enderror>
+        <input type="text" id="year" name="year" value="{{ old('year', $car->year) }}" @error('year') class="input-error" @enderror>
         @error('year')
         <div></div>
         <span class="error-message">{{ $message }}</span>
         @enderror
         <label for="salesperson_email">Salesperson Email</label>
-        <input type="text" id="salesperson_email" name="salesperson_email" value="{{ old('salesperson_email', $car->salesperson_email) }}" @error('model') class="input-error" @enderror>
+        <input type="text" id="salesperson_email" name="salesperson_email" value="{{ old('', $car->salesperson_email) }}" @error('salesperson_email') class="input-error" @enderror>
         @error('salesperson_email')
         <div></div>
         <span class="error-message">{{ $message }}</span>
         @enderror
         <label for="manufacturer">Manufacturer</label>
-        <select id="manufacturer" class="tom-select" name="manufacturer" @error('model') class="input-error" @enderror>
+        <select id="manufacturer" class="tom-select" name="manufacturer" @error('manufacturer') class="input-error" @enderror>
             <option value="">All Manufacturers</option>
             @foreach($manufacturers as $manufacturer)
             <option value="{{ $manufacturer->id }}" {{ old('manufacturer', $car->manufacturer()->first()?->id) == $manufacturer->id ? 'selected' : '' }}>{{ $manufacturer->name }}</option>
