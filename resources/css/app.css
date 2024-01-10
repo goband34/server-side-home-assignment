@@ -64,8 +64,13 @@ table .id-column {
     font-weight: 500;
 }
 
+.button.button-red {
+    border: 1px solid red;
+    color: red;
+}
+
 .button.button-pale {
     background-color: white;
-    border: 1px solid #8d949a;
-    color: #7c8a91;
+    border: 1px solid #575757;
+    color: #575757;
 }
