@@ -68,9 +68,9 @@ class CarController extends Controller
             \DB::commit();
             return redirect()->route('cars.index')->withSuccess('Successfully saved the car');
         }
-        catch (Throwable $e) {
+        catch (\Throwable $e) {
             \DB::rollback();
-            return redirect()->back()->withErrors([$e->message]);
+            return redirect()->back()->withErrors([$e->getMessage()]);
         }
     }
 
@@ -84,7 +84,8 @@ class CarController extends Controller
 
         try {
             \DB::beginTransaction();
-            
+
+            throw new \Exception('Test');
             $car->model = $request->model;
             $car->year = $request->year;
             $car->salesperson_email = $request->salesperson_email;
@@ -94,9 +95,22 @@ class CarController extends Controller
             \DB::commit();
             return redirect()->route('cars.index')->withSuccess('Successfully saved the car');
         }
-        catch (Throwable $e) {
+        catch (\Throwable $e) {
             \DB::rollback();
-            return redirect()->back()->withErrors([$e->message]);
+            return redirect()->back()->withErrors([$e->getMessage()]);
+        }
+    }
+
+    public function destroy(Car $car) {
+        try {
+            \DB::beginTransaction();
+            $car->delete();
+            \DB::commit();
+            return redirect()->route('cars.index')->withSuccess('Successfully deleted car');
+        }
+        catch (\Throwable $e) {
+            \DB::rollback();
+            return redirect()->back()->withErrors([$e->getMessage()]);
         }
     }
 }

@@ -36,17 +36,21 @@
                 <td>{{ $car->salesperson_email }}</td>
                 <td>{{ $car->manufacturer()->first()?->name }}</td>
                 <td>
-                    <div class="car-list-buttons">
-                        <a href="{{ route('cars.show', ['car' => $car->id]) }}" class="car-list-button green">
-                            <i data-feather="eye"></i>
-                        </a>
-                        <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="car-list-button grey">
-                            <i data-feather="edit"></i>
-                        </a>
-                        <div class="car-list-button red" onclick="alert('Are you sure?')">
-                            <i data-feather="x"></i>
+                    <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" onsubmit="return confirm('Are you sure you want to delete the record?');" method="POST">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <div class="car-list-buttons">
+                            <a href="{{ route('cars.show', ['car' => $car->id]) }}" class="car-list-button green">
+                                <i data-feather="eye"></i>
+                            </a>
+                            <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="car-list-button grey">
+                                <i data-feather="edit"></i>
+                            </a>
+                            <button type="submit" class="car-list-button red">
+                                <i data-feather="x"></i>
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </td>
             </tr>
             @endforeach

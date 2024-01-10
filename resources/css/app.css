@@ -67,6 +67,7 @@ table .id-column {
 }
 
 .button.button-red {
+    background-color: white;
     border: 1px solid red;
     color: red;
 }

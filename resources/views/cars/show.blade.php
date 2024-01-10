@@ -6,7 +6,7 @@
 </header>
 
 <div id="form_container">
-    <form>
+    <div class="form-layout">
         <label for="model_name">Model</label>
         <input type="text" id="model_name" value="Camry" disabled>
         <label for="year">Year</label>
@@ -18,9 +18,13 @@
         <div></div>
         <div class="form-buttons">
             <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="button button-blue">Edit</a>
-            <a href="#" class="button button-red">Delete</a>
+            <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" onsubmit="return confirm('Are you sure you want to delete the record?');" method="POST" style="display: inline-block">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="button button-red">Delete</button>
+            </form>
             <a href="{{ route('cars.index') }}" class="button button-pale">Cancel</a>
         </div>
-    </form>
+    </div>
 </div>
 @endsection

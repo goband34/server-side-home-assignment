@@ -7,9 +7,9 @@
 
 <div id="form_container">
     @if($mode === 'create')
-    <form action="{{ route('cars.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('cars.store') }}" method="POST" enctype="multipart/form-data" class="form-layout">
     @else
-    <form action="{{ route('cars.update', ['car' => $car->id]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('cars.update', ['car' => $car->id]) }}" method="POST" enctype="multipart/form-data" class="form-layout">
         <input type="hidden" name="_method" value="PUT">
     @endif
         @csrf
@@ -44,8 +44,8 @@
         @enderror
         <div></div>
         <div class="form-buttons">
-            <button class="button button-blue">Save</button>
-            <button class="button button-pale">Cancel</button>
+            <button type="submit" class="button button-blue">Save</button>
+            <a href="{{ route('cars.index') }}" class="button button-pale">Cancel</a>
         </div>
     </form>
 </div>
