@@ -5,6 +5,7 @@ header .add-car-button {
     border-radius: 4px;
     border: none;
     color: white;
+    text-decoration: none;
     font-family: Roboto;
     font-size: 1.1em;
     font-weight: 500;

@@ -3,7 +3,7 @@
 @section('content')
 <header>
     <h1 class="header-title">All Cars Models</h1>
-    <button class="add-car-button">Add New</button>
+    <a href="{{ route('cars.create') }}" class="add-car-button">Add New</a>
 </header>
 <section id="select_section">
     <form> 
