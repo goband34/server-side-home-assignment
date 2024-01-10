@@ -15,6 +15,10 @@ use App\Http\Controllers\ManufacturerController;
 |
 */
 
+Route::get('/', function() {
+    return redirect()->route('cars.index');
+});
+
 Route::resource('cars', CarController::class);
 
 Route::get('manufacturers', [ManufacturerController::class, 'index']);
