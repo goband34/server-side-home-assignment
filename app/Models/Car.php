@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Manufacturer;
 
 class Car extends Model
 {
@@ -13,4 +15,8 @@ class Car extends Model
         'salesperson_email',
         'manufacturer_id'
     ];
+
+    public function manufacturer(): BelongsTo {
+        return $this->belongsTo(Manufacturer::class);
+    }
 }

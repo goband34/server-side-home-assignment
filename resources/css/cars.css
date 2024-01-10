@@ -12,7 +12,7 @@ header .add-car-button {
     float: right;
 }
 
-.ts-control .item {
+.ts-control .item, .ts-control input {
     font-family: Roboto;
     font-size: 1.1em;
     font-weight: 400;
@@ -29,9 +29,11 @@ header .add-car-button {
     justify-content: end;
     align-items: center;
     margin-bottom: 30px;
+    padding: 0 30px;
 }
 
-#select_section .tom-select {
+#select_section form {
+    display: inline-block;
     width: 50%;
 }
 

@@ -3,7 +3,9 @@ import TomSelect from '../../node_modules/tom-select/dist/esm/tom-select.complet
 import '../../node_modules/feather-icons/dist/feather.min.js';
 
 if(document.getElementsByClassName('tom-select').length > 0) {
-    new TomSelect('.tom-select', {});
+    new TomSelect('.tom-select', {
+        allowEmptyOption: true
+    });
 }
 
 // Styling for alternating tables

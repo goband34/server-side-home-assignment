@@ -15,18 +15,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($manufacturers as $manufacturer)
             <tr>
-                <td class="id-column">1</td>
-                <td>Toyota Motor Corporation</td>
-                <td>HQ, Kyoto District, Tokyo, Japan</td>
-                <td>123</td>
+                <td class="id-column">{{ $manufacturer->id }}</td>
+                <td>{{ $manufacturer->name }}</td>
+                <td>{{ $manufacturer->address }}</td>
+                <td>{{ $manufacturer->phone }}</td>
             </tr>
-            <tr>
-                <td class="id-column">1</td>
-                <td>Toyota Motor Corporation</td>
-                <td>HQ, Kyoto District, Tokyo, Japan</td>
-                <td>123</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </section>
