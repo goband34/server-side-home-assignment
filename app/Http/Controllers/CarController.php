@@ -85,7 +85,6 @@ class CarController extends Controller
         try {
             \DB::beginTransaction();
 
-            throw new \Exception('Test');
             $car->model = $request->model;
             $car->year = $request->year;
             $car->salesperson_email = $request->salesperson_email;
