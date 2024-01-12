@@ -8,13 +8,13 @@
 <div id="form_container">
     <div class="form-layout">
         <label for="model_name">Model</label>
-        <input type="text" id="model_name" value="Camry" disabled>
+        <input type="text" id="model_name" value="{{ $car->model }}" disabled>
         <label for="year">Year</label>
-        <input type="text" id="year" value="2010" disabled>
+        <input type="text" id="year" value="{{ $car->year }}" disabled>
         <label for="salesperson_email">Salesperson Email</label>
-        <input type="text" id="salesperson_email" value="joe@carozza.com" disabled>
+        <input type="text" id="salesperson_email" value="{{ $car->salesperson_email }}" disabled>
         <label for="manufacturer">Manufacturer</label>
-        <input type="text" id="manufacturer" value="Toyota Motor Corp" disabled>
+        <input type="text" id="manufacturer" value="{{ $car->manufacturer()->first()?->name }}" disabled>
         <div></div>
         <div class="form-buttons">
             <a href="{{ route('cars.edit', ['car' => $car->id]) }}" class="button button-blue">Edit</a>
